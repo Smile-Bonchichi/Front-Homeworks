@@ -1,0 +1,24 @@
+/*first page*/
+div {
+    text-align: center;
+    padding: 15em 0;
+}
+
+h1 {
+    color: chocolate;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    color: brown;
+}
+
+/*second page*/
+.container {
+    display: flex;
+}
+
+/* не смог по центру поставить точки, и забил... */
