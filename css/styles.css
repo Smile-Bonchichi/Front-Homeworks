@@ -1,0 +1,28 @@
+div {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: blue;
+}
+
+i {
+    font-size: 20px;
+    color: blue;
+}
+
+b {
+    font-size: 20px;
+    color: red;
+}
+
+p {
+    text-align: justify;
+    text-indent: 40px;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+}
