@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background: #283036;
+}
+
+.background {
+    height: 98vh;
+    width: 100vw;
+    background: url("/images/image-1.png") no-repeat center bottom;
+    position: relative;
+}
+
+.image {
+    bottom: 0.5vw;
+    left: 8vw;
+    position: absolute;
+}
