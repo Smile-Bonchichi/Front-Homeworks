@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: #283036;
+}
+
+.home {
+    background: url("../images/background.png") no-repeat bottom right;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    width: 1224px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 600px;
+    height: 100%;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
+
+.title > h1 {
+    width: 600px;
+    height: 140px;
+
+
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.title > p {
+    width: 487px;
+    height: 60px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.social_links {
+    display: flex;
+    justify-content: space-between;
+
+    width: 190px;
+    bottom: 0;
+    left: 108px;
+    position: absolute;
+}
+
+.brand {
+    padding: 200px 0;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #2C353D url("../images/logos/ellipse_backgound_brands.png") no-repeat;
+
+    height: 250px;
+    border-radius: 25px;
+}
