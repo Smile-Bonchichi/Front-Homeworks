@@ -9,3 +9,14 @@ html {
     font-weight: 400;
     color: #9A9EA0;
 }
+
+.container {
+    width: 1224px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    background: #283036;
+}
