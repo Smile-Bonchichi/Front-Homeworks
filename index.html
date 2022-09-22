@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset='UTF-8'>
 		<title>Geek Tech</title>
@@ -13,5 +13,37 @@
 		      href='./css/styles.css'>
 	</head>
 	<body>
+	<div id="container"></div>
+	<input id="add-item-btn" type="button" value="+">
+
+	<form>
+		<label>
+			<input type="text" name="username" />
+		</label>
+		<label>
+			<input type="text" name="password" />
+		</label>
+		<input type="submit" name="LogInButton" value="Log in" disabled />
+	</form>
+
+	<p class="question">
+		Висит груша - нельзя скушать.
+		<span class="helper-answer">Показать ответ</span>
+		<span class="answer">Лампочка</span>
+	</p>
+
+	<p class="question">
+		С луком с яйцами, но не пирожок?
+		<span class="helper-answer">Показать ответ</span>
+		<span class="answer">Робин Гуд</span>
+	</p>
+
+	<p class="question">
+		Один глаз, один рог, но не носорог?
+		<span class="helper-answer">Показать ответ</span>
+		<span class="answer">Корова из-за угла выглядывает</span>
+	</p>
+
+	<script src='/js/index.js'></script>
 	</body>
 </html>
