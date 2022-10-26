@@ -79,3 +79,37 @@ document.addEventListener('scroll', e => {
         openModal();
     }
 });
+
+const forms = document.querySelectorAll('form');
+
+const postData = (form) => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const request = new XMLHttpRequest();
+        
+        request.open('POST', '../json/data.json');
+        request.setRequestHeader('Content-type', 'application/json');
+        
+        const formData = new FormData(form);
+        const object = {};
+        
+        formData.forEach((item, i) => {
+            object[i] = item;
+        });
+        
+        request.send(JSON.stringify(object));
+        
+        request.addEventListener('load', () => {
+            if (request.status === 200) {
+                alert('Спасибо за обращение');
+            } else {
+                alert('Что-то пошло не так');
+            }
+        });
+    });
+};
+
+forms.forEach(f => {
+    postData(f);
+});
