@@ -73,7 +73,7 @@ modal.addEventListener('click', (event) => {
 
 closeModalBtn.addEventListener('click', closeModal);
 
-document.addEventListener('scroll', e => {
+document.addEventListener('scroll', () => {
     if ((pageYOffset + window.innerHeight) ===
         document.documentElement.scrollHeight) {
         openModal();
@@ -82,14 +82,19 @@ document.addEventListener('scroll', e => {
 
 const forms = document.querySelectorAll('form');
 
-const postData = (form) => {
+const postData = (url, data) => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data
+    });
+};
+
+const bindPostData = (form) => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const request = new XMLHttpRequest();
-        
-        request.open('POST', '../json/data.json');
-        request.setRequestHeader('Content-type', 'application/json');
         
         const formData = new FormData(form);
         const object = {};
@@ -98,18 +103,16 @@ const postData = (form) => {
             object[i] = item;
         });
         
-        request.send(JSON.stringify(object));
+        const body = JSON.stringify(object);
         
-        request.addEventListener('load', () => {
-            if (request.status === 200) {
-                alert('Спасибо за обращение');
-            } else {
-                alert('Что-то пошло не так');
-            }
+        postData('../json/data.json', body).then(() => {
+            alert('Спасибо за обращение');
+        }).catch(() => {
+            alert('Что-то пошло не так');
         });
     });
 };
 
 forms.forEach(f => {
-    postData(f);
+    bindPostData(f);
 });
