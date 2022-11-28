@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-class ContactsPage extends Component {
-    constructor(props) {
-        super(props);
+const ContactsPage = () => {
+    const [inputValue, setInputValue] = useState('');
+    
+    const changeInput = (e) => {
+        setInputValue(e.target.value);
+    };
+    
+    const stateInfo = () => {
+        alert(inputValue);
         
-        this.state = { inputValue: '' };
-    }
-    
-    changeInput = (e) => {
-        this.setState({ inputValue: e.target.value });
+        clearState();
     };
     
-    stateInfo = () => {
-        alert(this.state.inputValue);
-        
-        this.clearState();
+    const clearState = () => {
+        setInputValue('');
     };
     
-    clearState = () => {
-        this.setState({ inputValue: '' });
-    };
-    
-    render() {
-        return (
-            <>
-                <input type='text' value={ this.state.inputValue }
-                       onChange={ this.changeInput }/>
-                <button onClick={ this.stateInfo }>add</button>
-                <button onClick={ this.clearState }>clear</button>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <input type='text' value={ inputValue }
+                   onChange={ changeInput }/>
+            <button onClick={ stateInfo }>add</button>
+            <button onClick={ clearState }>clear</button>
+        </>
+    );
+};
 
 export default ContactsPage;

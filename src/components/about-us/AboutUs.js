@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-class AboutUs extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = { isShow: false };
-    }
+const AboutUs = () => {
+    const [isShow, setIsShow] = useState(false);
     
-    showText = () => {
-        this.setState({ isShow: !this.state.isShow });
+    const showText = () => {
+        setIsShow(!isShow);
     };
     
-    render() {
-        return (
-            <>
-                <p hidden={ this.state.isShow }>текст</p>
-                <button onClick={ this.showText }>кнопку</button>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <p hidden={ isShow }>текст</p>
+            <button onClick={ showText }>кнопку</button>
+        </>
+    );
+};
 
 export default AboutUs;

@@ -1,35 +1,27 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-class PortfolioPage extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = { works: [] };
-    }
+const PortfolioPage = () => {
+    const [works, setWorks] = useState([]);
     
-    getWork = () => {
-        const tempWorks = this.state.works;
-        
-        tempWorks.push('Work' + (tempWorks.length + 1));
-        
-        this.setState({ works: tempWorks });
+    const getWork = () => {
+        setWorks([...works, 'Work']);
     };
     
-    render() {
-        return (
-            <>
-                <button onClick={ this.getWork }>get</button>
-                <ul>
-                    {
-                        this.state.works.length > 0 ?
-                            this.state.works.map(
-                                (value) => <li>{ value }</li>) :
-                            <li>Пусто</li>
-                    }
-                </ul>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <button onClick={ getWork }>get</button>
+            <ul>
+                {
+                    works.length > 0
+                        ?
+                        works.map(
+                            (value, index) =>
+                                <li key={ index }>{ value + (index + 1) }</li>)
+                        : <li>Пусто</li>
+                }
+            </ul>
+        </>
+    );
+};
 
 export default PortfolioPage;
