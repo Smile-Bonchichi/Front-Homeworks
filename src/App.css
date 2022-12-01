@@ -1,0 +1,23 @@
+.wrapper {
+    display:         flex;
+    justify-content: space-around;
+}
+
+.title {
+    color:  green;
+    margin: 30px;
+}
+
+.left {
+    display:        flex;
+    flex-direction: column;
+}
+
+.right {
+    width:           50vw;
+
+    display:         flex;
+    justify-content: center;
+    align-content:   center;
+    flex-wrap:       wrap;
+}
