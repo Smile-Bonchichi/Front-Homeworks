@@ -1,10 +1,12 @@
+import React from 'react';
 import './App.css';
+import './asserts/style/global-reset.css';
+import MainPage from './pages/main-page/MainPage.js';
 
-function App() {
+export default function App() {
     return (
-        <div>
-        </div>
+        <>
+            <MainPage/>
+        </>
     );
 }
-
-export default App;
