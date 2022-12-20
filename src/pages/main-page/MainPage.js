@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Divide } from '../../components/divide/Divide.js';
-import { Minus } from '../../components/minus/Minus.js';
-import { Plus } from '../../components/plus/Plus.js';
-import { Multiply } from '../../components/multiply/Multiply.js';
+import { Operation } from '../../components/operation/Operation.js';
+import { actionType } from '../../redux/reducer.js';
 
 export const MainPage = () => {
     const number = useSelector(state => state.number);
@@ -48,17 +46,21 @@ export const MainPage = () => {
             <label htmlFor='secondNumber'>Вторая цифра</label>
             
             <div style={ buttons }>
-                <Plus firstNumber={ firstNumber }
-                      secondNumber={ secondNumber }/>
+                <Operation firstNumber={ firstNumber }
+                           secondNumber={ secondNumber }
+                           action={ actionType.plus }/>
                 
-                <Minus firstNumber={ firstNumber }
-                       secondNumber={ secondNumber }/>
+                <Operation firstNumber={ firstNumber }
+                           secondNumber={ secondNumber }
+                           action={ actionType.minus }/>
                 
-                <Multiply firstNumber={ firstNumber }
-                          secondNumber={ secondNumber }/>
+                <Operation firstNumber={ firstNumber }
+                           secondNumber={ secondNumber }
+                           action={ actionType.multiply }/>
                 
-                <Divide firstNumber={ firstNumber }
-                        secondNumber={ secondNumber }/>
+                <Operation firstNumber={ firstNumber }
+                           secondNumber={ secondNumber }
+                           action={ actionType.divide }/>
             </div>
         </div>
     );

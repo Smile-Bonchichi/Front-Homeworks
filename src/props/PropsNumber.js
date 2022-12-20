@@ -1,4 +1,5 @@
 export type PropsNumber = {
     firstNumber: number,
-    secondNumber: number
+    secondNumber: number,
+    action: string
 }

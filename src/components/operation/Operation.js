@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import type { PropsNumber } from '../../props/PropsNumber.js';
-import { actionType } from '../../redux/reducer.js';
+import { operationViewFactory } from '../../factory/OperationViewFactory.js';
 
-export const Minus = (props: PropsNumber) => {
+export const Operation = (props: PropsNumber) => {
     const dispatch = useDispatch();
     
-    const minusNumbers = () => {
+    const operationNumbers = () => {
         dispatch({
-            type: actionType.minus,
+            type: props.action,
             payload: {
                 firstNumber: props.firstNumber,
                 secondNumber: props.secondNumber
@@ -17,6 +17,8 @@ export const Minus = (props: PropsNumber) => {
     };
     
     return (
-        <button onClick={ minusNumbers }> - </button>
+        <button onClick={ operationNumbers }>
+            { operationViewFactory(props.action) }
+        </button>
     );
 };
