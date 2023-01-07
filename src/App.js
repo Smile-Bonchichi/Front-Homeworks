@@ -1,10 +1,7 @@
-import './App.css';
+import { OperationPage } from './pages/operator-page/OperationPage.js';
 
-function App() {
+export default function App() {
     return (
-        <div>
-        </div>
+        <OperationPage/>
     );
 }
-
-export default App;
