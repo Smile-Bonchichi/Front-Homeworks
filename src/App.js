@@ -1,10 +1,11 @@
-import './App.css';
+import CreatePostPage from './pages/create-post-page/CreatePostPage';
 
-function App() {
-    return (
-        <div>
-        </div>
-    );
-}
+import React from 'react';
+import PostsPage from './pages/posts-page/PostsPage.js';
 
-export default App;
+export const App = (props) => (
+    <>
+        <CreatePostPage/>
+        <PostsPage/>
+    </>
+);
